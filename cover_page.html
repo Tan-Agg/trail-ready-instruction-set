@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trail Ready - Cover Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #cfe0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      .page {
+        width: 680px;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: #1a3a2a;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        min-height: 520px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80")
+          center/cover no-repeat;
+        opacity: 0.45;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2.5rem 2.5rem 2rem;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #4a9e6b;
+        color: #e8f5ee;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        font-weight: 600;
+        color: #f0f7f2;
+        line-height: 1.2;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero .subtitle {
+        font-size: 18px;
+        color: #a8d4b8;
+        margin-bottom: 1.8rem;
+        font-weight: 400;
+      }
+
+      .divider {
+        width: 48px;
+        height: 2px;
+        background: #4a9e6b;
+        margin-bottom: 1.8rem;
+      }
+
+      /* ── INFO GRID ── */
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .info-card {
+        background: rgba(10, 30, 18, 0.65);
+        border: 0.5px solid rgba(74, 158, 107, 0.4);
+        border-radius: 8px;
+        padding: 0.9rem 1rem;
+      }
+
+      .info-card .label {
+        font-size: 11px;
+        color: #7dbf95;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+
+      .info-card .value {
+        font-size: 14px;
+        color: #e0f0e8;
+        font-weight: 500;
+      }
+
+      /* ── RHETORICAL SITUATION ── */
+      .rhetorical {
+        margin-top: 1.5rem;
+        background: #e6ecf3;
+        border: 0.5px solid #c8d4e0;
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+      }
+
+      .rhetorical .section-label {
+        font-size: 11px;
+        color: #888;
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-weight: 500;
+      }
+
+      .rhetorical-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .rhetorical-item .item-label {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 3px;
+      }
+
+      .rhetorical-item .item-value {
+        font-size: 13px;
+        color: #222;
+        line-height: 1.5;
+      }
+
+      /* ── PRINT / PDF ── */
+      @media print {
+        html,
+        body {
+          height: 100%;
+          padding: 0;
+          background-color: #cfe0f0 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          width: 100%;
+        }
+        .rhetorical {
+          background: #b8d0e8 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="badge">Beginner's Field Guide</div>
+
+          <h1>Trail Ready</h1>
+          <p class="subtitle">
+            How to load your hiking backpack appropriately for overnight and
+            multi-day excursions
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <p class="label">Prepared by</p>
+              <p class="value">Tanvi Aggarwal</p>
+            </div>
+            <div class="info-card">
+              <p class="label">Course</p>
+              <p class="value">ENGL 210</p>
+            </div>
+            <div class="info-card">
+              <p class="label">Instructor</p>
+              <p class="value">ASHLEY BARROS</p>
+            </div>
+            <div class="info-card">
+              <p class="label">Date</p>
+              <p class="value">April 12, 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rhetorical">
+        <p class="section-label">Rhetorical Situation</p>
+        <div class="rhetorical-grid">
+          <div class="rhetorical-item">
+            <p class="item-label">Audience</p>
+            <p class="item-value">
+              Hikers who have never gone backpacking before
+            </p>
+          </div>
+          <div class="rhetorical-item">
+            <p class="item-label">Purpose</p>
+            <p class="item-value">
+              Instruct novices on how to pack well for trail comfort and safety.
+            </p>
+          </div>
+          <div class="rhetorical-item">
+            <p class="item-label">Context</p>
+            <p class="item-value">
+              Before going on your first overnight or multi day hiking
+              expedition, use this at home.
+            </p>
+          </div>
+          <p
+            style="
+              font-size: 10px;
+              color: #888;
+              margin-top: 0.9rem;
+              padding-top: 0.6rem;
+              border-top: 0.5px solid #c8d4e0;
+            "
+          >
+            Image: Emsley, Kalen. <em>Mountain Trail.</em> Unsplash,
+            unsplash.com/photos/7KLa-xLbSXA. Accessed 11 Apr. 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

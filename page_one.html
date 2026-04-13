@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trail Ready - Page 1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #cfe0f0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 750px;
+        margin: 2rem auto;
+        background-color: #eaf3fb;
+        border-radius: 14px;
+        padding: 2.2rem 2.5rem;
+        border: 0.5px solid #b8d4e8;
+      }
+
+      /* ── PAGE HEADER ── */
+      .page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.6rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid #4a9e6b;
+      }
+
+      .page-header h1 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1a3a2a;
+      }
+
+      .page-badge {
+        background: #4a9e6b;
+        color: #e8f5ee;
+        font-size: 11px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-weight: 500;
+      }
+
+      /* ── SECTIONS ── */
+      .section {
+        margin-bottom: 1.6rem;
+      }
+
+      .section h2 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a3a2a;
+        margin-bottom: 0.5rem;
+        padding-left: 10px;
+        border-left: 3px solid #4a9e6b;
+      }
+
+      .section p {
+        font-size: 13px;
+        color: #2c2c2a;
+        line-height: 1.7;
+      }
+
+      /* ── TWO COLUMN LAYOUT ── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        align-items: start;
+      }
+
+      .three-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.2rem;
+        align-items: start;
+      }
+
+      /* ── TABLE ── */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-top: 0.5rem;
+      }
+
+      thead tr {
+        background-color: #1a3a2a;
+        color: #e8f5ee;
+      }
+
+      thead th {
+        padding: 8px 12px;
+        text-align: left;
+        font-weight: 500;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #d4e9f7;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #eaf3fb;
+      }
+
+      tbody td {
+        padding: 8px 12px;
+        color: #2c2c2a;
+      }
+
+      /* ── IMAGE ── */
+      .img-wrap {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 0.5px solid #b8d4e8;
+      }
+
+      .img-wrap img {
+        width: 100%;
+        display: block;
+        border-radius: 10px;
+      }
+
+      .img-caption {
+        font-size: 10px;
+        color: #6a8a9a;
+        margin-top: 4px;
+        text-align: center;
+        font-style: italic;
+      }
+
+      /* ── CALLOUT BOX ── */
+      .callout {
+        background-color: #d0e8f5;
+        border-left: 4px solid #4a9e6b;
+        border-radius: 8px;
+        padding: 0.8rem 1rem;
+        margin-top: 0.6rem;
+      }
+
+      .callout p {
+        font-size: 13px;
+        color: #1a3a2a;
+        line-height: 1.6;
+      }
+
+      .callout strong {
+        color: #1a3a2a;
+      }
+
+      /* ── STEP BOX ── */
+      .steps {
+        margin-top: 0.6rem;
+      }
+
+      .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 0.6rem;
+      }
+
+      .step-num {
+        min-width: 24px;
+        height: 24px;
+        background: #1a3a2a;
+        color: #e8f5ee;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 1px;
+      }
+
+      .step p {
+        font-size: 13px;
+        color: #2c2c2a;
+        line-height: 1.6;
+      }
+
+      /* ── PIE CHART ── */
+      .chart-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .chart-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #1a3a2a;
+        text-align: center;
+      }
+
+      svg.pie {
+        width: 160px;
+        height: 160px;
+      }
+
+      .legend {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #2c2c2a;
+      }
+
+      .legend-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        min-width: 12px;
+      }
+
+      /* ── FOOTER ── */
+      .page-footer {
+        margin-top: 1.5rem;
+        padding-top: 0.7rem;
+        border-top: 0.5px solid #b8d4e8;
+        font-size: 10px;
+        color: #6a8a9a;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media print {
+        html,
+        body {
+          background-color: #cfe0f0 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <div class="page-header">
+        <h1>Before You Pack</h1>
+        <span class="page-badge">Page 1 of 3</span>
+      </div>
+
+      <!-- SECTION 1: WHY PACKING MATTERS -->
+      <div class="section">
+        <h2>Why Packing Right Matters</h2>
+        <p>
+          The majority of novice hikers pack everything they'll need and hope
+          for the best. By the third mile, their rain jacket is buried at the
+          bottom and their shoulders are hurting. Proper packing disperses
+          weight. makes every mile more comfortable, keeps necessities
+          accessible, and covers your hips and spine. Your hips, not your
+          shoulders, should bear 80% of your weight. Beginners are unaware of
+          this particular, helpful fact. The night before, at home, can make all
+          the difference between a wonderful hike and a dreadful one.
+        </p>
+      </div>
+
+      <!-- MAIN CONTENT: two columns from backpack section onwards -->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.2rem;
+          align-items: stretch;
+          margin-top: 0.8rem;
+        "
+      >
+        <!-- LEFT COLUMN: Backpack text+tip → then 20% rule -->
+        <div style="display: flex; flex-direction: column">
+          <h2
+            style="
+              font-size: 15px;
+              font-weight: 600;
+              color: #1a3a2a;
+              margin-bottom: 0.5rem;
+              padding-left: 10px;
+              border-left: 3px solid #4a9e6b;
+            "
+          >
+            Step 0 - Choosing the Right Backpack Size
+          </h2>
+          <p
+            style="
+              font-size: 13px;
+              color: #2c2c2a;
+              line-height: 1.7;
+              margin-bottom: 0;
+            "
+          >
+            Using the wrong size pack is one of the most common beginner
+            mistakes. If it is too big, you will overpack and if it is too
+            little, you'll forget necessities. Utilize the right hand guide:
+          </p>
+          <div class="callout" style="margin-top: 0.4rem">
+            <p>
+              <strong>Tip:</strong> For most people a 50 liter bag is ideal. For
+              first time overnight hikers, avoid choosing an ultralight pack
+              because it will be less supportive and padded.
+            </p>
+          </div>
+          <!-- 20% RULE STARTS RIGHT AFTER TIP -->
+          <div
+            style="
+              border-top: 2px solid #4a9e6b;
+              padding-top: 0.6rem;
+              margin-top: 1.3rem;
+              flex: 1;
+            "
+          >
+            <h2
+              style="
+                font-size: 15px;
+                font-weight: 600;
+                color: #1a3a2a;
+                margin-bottom: 0.4rem;
+                padding-left: 10px;
+                border-left: 3px solid #4a9e6b;
+              "
+            >
+              The 20% Weight Rule
+            </h2>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.4rem;
+                margin-bottom: 0.4rem;
+              "
+            >
+              <p style="font-size: 11px; font-weight: 600; color: #1a3a2a">
+                Pack vs. Body Weight
+              </p>
+              <svg
+                width="140"
+                height="140"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="50" cy="50" r="45" fill="#d0e8f5" />
+                <path
+                  d="M50,50 L50,5 A45,45 0 0,1 92.6,32.5 Z"
+                  fill="#1a3a2a"
+                />
+                <path
+                  d="M50,50 L92.6,32.5 A45,45 0 1,1 50,5 Z"
+                  fill="#4a9e6b"
+                />
+                <circle cx="50" cy="50" r="22" fill="#eaf3fb" />
+                <text
+                  x="50"
+                  y="47"
+                  text-anchor="middle"
+                  font-size="9"
+                  font-weight="600"
+                  fill="#1a3a2a"
+                >
+                  Pack
+                </text>
+                <text
+                  x="50"
+                  y="57"
+                  text-anchor="middle"
+                  font-size="9"
+                  font-weight="600"
+                  fill="#1a3a2a"
+                >
+                  ≤20%
+                </text>
+              </svg>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 5px;
+                  width: 100%;
+                "
+              >
+                <div class="legend-item">
+                  <div class="legend-dot" style="background: #1a3a2a"></div>
+                  Pack weight (max 20%)
+                </div>
+                <div class="legend-item">
+                  <div class="legend-dot" style="background: #4a9e6b"></div>
+                  Your body weight (80%)
+                </div>
+              </div>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                color: #2c2c2a;
+                line-height: 1.5;
+                margin-top: 1.2rem;
+              "
+            >
+              Never let your completely laden pack weigh more than 20% of your
+              body weight.Beyond this, muscles and joints experience significant
+              strain over extended distances. Before you depart, weigh your
+              packed bag and make any necessary adjustments.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: image+table → then Step 0 -->
+        <div
+          class="img-wrap"
+          style="border: none; border-radius: 0; background: transparent"
+        >
+          <div style="height: 22px"></div>
+          <div class="img-wrap" style="max-height: 130px; overflow: hidden">
+            <img
+              src="backpack.png"
+              alt="Three backpacks of different sizes"
+              style="
+                width: 100%;
+                object-fit: cover;
+                object-position: center top;
+              "
+            />
+          </div>
+          <p class="img-caption">
+            Shewmaker, Dallas. "All About Backpacks." Gear To Go Outfitters,
+            2019.
+          </p>
+          <table style="margin-top: 0.3rem">
+            <thead>
+              <tr>
+                <th>Trip Length</th>
+                <th>Recommended Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Overnight (1-2 nights)</td>
+                <td>35-50 liters</td>
+              </tr>
+              <tr>
+                <td>Multi-day (3-5 nights)</td>
+                <td>50-65 liters</td>
+              </tr>
+              <tr>
+                <td>Extended (6+ nights)</td>
+                <td>65-75 liters</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- STEP 0 STARTS AFTER TABLE -->
+          <div
+            style="
+              border-top: 2px solid #4a9e6b;
+              padding-top: 0.6rem;
+              margin-top: 0.8rem;
+              flex: 1;
+            "
+          >
+            <h2
+              style="
+                font-size: 15px;
+                font-weight: 600;
+                color: #1a3a2a;
+                margin-bottom: 0.5rem;
+                padding-left: 10px;
+                border-left: 3px solid #4a9e6b;
+              "
+            >
+              Step 1 - Lay Everything Out First
+            </h2>
+            <p
+              style="
+                font-size: 12px;
+                color: #2c2c2a;
+                line-height: 1.6;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Spread everything on the ground and take the following actions
+              before putting anything in your pack:
+            </p>
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">a</div>
+                <p>
+                  <strong>Make an essentials pile</strong>: everything need for
+                  survival and safety.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-num">b</div>
+                <p>
+                  <strong>Make a nice to have pile</strong>: other novels,
+                  additional clothing and expensive goods.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-num">c</div>
+                <p>
+                  <strong>Cut the nice to haves in half</strong>: On the trail,
+                  every ounce matters.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-num">d</div>
+                <p>
+                  <strong>Weigh everything packed</strong>: Modify till inside
+                  the 20% rule.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TWO AI IMAGES FULL WIDTH AT BOTTOM -->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+          margin-top: 0.7rem;
+        "
+      >
+        <div>
+          <p
+            style="
+              font-size: 11px;
+              font-weight: 600;
+              color: #1a3a2a;
+              margin-bottom: 3px;
+            "
+          >
+            Gemini Generated
+          </p>
+          <div class="img-wrap">
+            <img
+              src="AI_essentials.png"
+              alt="Flat lay of essential hiking gear"
+              style="
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                object-position: center center;
+              "
+            />
+          </div>
+        </div>
+        <div>
+          <p
+            style="
+              font-size: 11px;
+              font-weight: 600;
+              color: #1a3a2a;
+              margin-bottom: 3px;
+            "
+          >
+            Gemini Generated
+          </p>
+          <div class="img-wrap">
+            <img
+              src="AI_nicetohave.png"
+              alt="Flat lay of nice to have hiking items"
+              style="
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                object-position: center center;
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="page-footer">
+        <span
+          >Trail Ready: A Beginner's Guide to Packing Your Hiking Backpack</span
+        >
+        <span
+          >Sources: REI Expert Advice · Hikes &amp; Trails · First Ascent · Gear
+          To Go Outfitters · AI images: Google Gemini, 2026</span
+        >
+      </div>
+    </div>
+  </body>
+</html>
